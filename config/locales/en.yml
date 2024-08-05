@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+
+  errors:
+    messages:
+      blank: "is missing"
+      too_long:
+        one: "is too long"
+        other: "is too long"
