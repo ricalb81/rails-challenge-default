@@ -1,6 +1,7 @@
 class AccessKeyService
 
   URL_ACCOUNT_KEY = 'https://w7nbdj3b3nsy3uycjqd7bmuplq0yejgw.lambda-url.us-east-2.on.aws/v2/account'
+
   def initialize(email, key)
     @email = email
     @key = key
