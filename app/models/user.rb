@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   before_validation :generate_key, on: :create, unless: :skip_callbacks?
 
+  after_create do
+    GenerateAccountKeyJob.new.perform(id)
+  end
+
   private
 
   def skip_callbacks?

@@ -17,6 +17,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'sidekiq'
+gem "sidekiq-cron"
+
+gem 'httparty'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '1.18.3', require: false
@@ -30,8 +33,11 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_bot_rails"
   gem "faker"
+
 end
 
 group :test do
   gem 'shoulda-matchers', require: false
+  gem 'webmock'
+  gem 'simplecov', require: false
 end

@@ -5,7 +5,6 @@ FactoryBot.define do
     full_name { Faker::Name.name }
     password { "password" }
     password_confirmation { "password" }
-    account_key { "ABCDEF" }
     metadata { "male, age 32, unemployed, college-educated" }
   end
 end
