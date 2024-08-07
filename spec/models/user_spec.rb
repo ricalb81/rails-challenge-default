@@ -1,6 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+  before do
+    @account_key = SecureRandom.hex(32)
+    allow_any_instance_of(AccessKeyService).to receive(:generate_account_key).and_return(@account_key)
+  end
+
+  describe 'columns' do
+    it 'has the expected columns' do
+      expected_columns = %w[id email phone_number full_name password_digest key account_key metadata created_at updated_at]
+      expect(described_class.column_names).to match_array(expected_columns)
+    end
+  end
+
   describe 'validations' do
     it { should validate_presence_of(:email) }
     it { should validate_uniqueness_of(:email) }
